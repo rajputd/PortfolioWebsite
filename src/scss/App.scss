@@ -9,3 +9,18 @@ body {
   text-align: center;
   color: $secondary-color;
 }
+
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+#home {
+  //override height to adjust for navbar
+  height: 90vh;
+
+  //center children
+  padding-top: 30vh;
+}
+
+
