@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+
+import '../scss/NavMenu.scss';
 
 const NavMenu = (props) => {
 	return (
-		<Navbar collapseOnSelect>
+		<Navbar collapseOnSelect id="NavMenu">
 			<Navbar.Header>
 				<Navbar.Brand>
 					<a href="#brand">Dileep Rajput</a>
