@@ -78,5 +78,9 @@ Content.portfolio = [
   },
 ];
 
+Content.contact = {
+  description: "Feel like reaching out? You can contact me via this form."
+}
+
 export default Content;
 

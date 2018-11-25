@@ -3,6 +3,7 @@ import NavMenu from './components/NavMenu';
 import ParticleContainer from './components/ParticleContainer';
 import SocialBar from './components/SocialBar';
 import Card from './components/Card';
+import GForm from './components/GForm';
 import Content from './Content';
 
 import './scss/App.scss';
@@ -33,6 +34,11 @@ class App extends Component {
               Content.portfolio.map((project, index) => <Card key={index} {...project} />)
             }
           </div>
+        </section>
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>{Content.contact.description}</p>
+          <GForm />
         </section>
       </div>
     );
