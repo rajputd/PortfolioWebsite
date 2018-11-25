@@ -77,7 +77,10 @@ class GForm extends Component {
           </Col>
         </FormGroup>
 
-        <Button type="submit">Submit</Button>
+        <Col sm={2} smOffset={5}>
+          <Button id="submit-btn" ype="submit">Submit</Button>
+        </Col>
+
       </form>
     );
   }
