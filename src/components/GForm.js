@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
-
-
 
 class GForm extends Component {
   constructor(props, context) {
@@ -34,42 +31,74 @@ class GForm extends Component {
   handleFormSubmit(e) {
     //prevent form from redirecting to different page
     e.preventDefault();
+
+    const url = "https://script.google.com/macros/s/AKfycbyVREX2GBuPbU6VcTEDbQ_wkxIffWqHfuY7KJc7/exec";
+
+    //construct object to hold form data
+    let data = [];
+    for(let field in this.state) {
+      data.push(encodeURIComponent(field) + '=' + encodeURIComponent(this.state[field]));
+    }
+
+    //convert object into a properly formated URI component
+    data = data.join('&').replace(/%20/g, '+');
+
+    let xhr = new XMLHttpRequest();
+
+    // Define what happens on successful data submission
+    xhr.addEventListener('load', function(event) {
+      //TODO make thank you message appear
+      console.log('Yeah! Data sent and response loaded.');
+      console.log(event);
+    });
+
+    // Define what happens in case of error
+    xhr.addEventListener('error', function(event) {
+      //TODO make error message appear
+      console.log('Oops! Something goes wrong.');
+      console.log(event);
+    });
+
+    //send data
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(data);
+
+
+
   }
 
   render() {
 
     return (
-      <form id="gform">
+      <form id="gform" method="POST">
         <div className="form-group">
-          <label for="name">Name</label>
+          <label>Name</label>
           <input
             type="text"
             className="form-control"
             name="name"
             value={this.state.name}
             onChange={this.handleNameChange}
-            require
           />
         </div>
         <div className="form-group">
-          <label for="email">Email</label>
+          <label>Email</label>
           <input
             type="email"
             className="form-control"
             name="email"
             value={this.state.email}
             onChange={this.handleEmailChange}
-            require
           />
         </div>
         <div className="form-group">
-          <label for="message">Message</label>
+          <label>Message</label>
           <textarea
             className="form-control"
             name="message"
             value={this.state.message}
             onChange={this.handleMessageChange}
-            require
           ></textarea>
         </div>
 
