@@ -17,19 +17,34 @@ class GForm extends Component {
       email: '',
       message: '',
       submitSuccessful: null,
+      valid: {
+        name: false,
+        email: false,
+        message: false,
+      }
     };
   }
 
   handleNameChange(e) {
-    this.setState({name: e.target.value});
+    let newValidState = Object.assign({}, this.state.valid)
+    newValidState.name = e.target.value.length > 0;
+
+    this.setState({name: e.target.value, valid: newValidState});
   }
 
   handleEmailChange(e) {
-    this.setState({email: e.target.value});
+    let newValidState = Object.assign({}, this.state.valid)
+    const emailReg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+    newValidState.email = emailReg.test(e.target.value)
+
+    this.setState({email: e.target.value, valid: newValidState});
   }
 
   handleMessageChange(e) {
-    this.setState({message: e.target.value});
+    let newValidState = Object.assign({}, this.state.valid)
+    newValidState.message = e.target.value.length > 0;
+
+    this.setState({message: e.target.value, valid: newValidState});
   }
 
   setSubmit(bool) {
@@ -80,16 +95,19 @@ class GForm extends Component {
 
   render() {
 
-    let submitMessage = "";
-    let disableSubmit = false;
+    let submitStatus = "";
+    let disableSubmit = !this.state.valid.name ||
+                        !this.state.valid.email ||
+                        !this.state.valid.message;
 
-    if (this.state.submitSuccessful === true){
-      submitMessage = "Thanks! I'll be in contact with you soon.";
-      disableSubmit = true;
-    }
+    if (!disableSubmit) {
+      if (this.state.submitSuccessful === true){
+        submitStatus = "Thanks! I'll be in contact with you soon.";
+      }
 
-    if (this.state.submitSuccessful === false) {
-      submitMessage = "Oops! This is embarrassing. Something seems to have gone wrong. Please try again later.";
+      if (this.state.submitSuccessful === false) {
+        submitStatus = "Oops! This is embarrassing. Something seems to have gone wrong. Please try again later.";
+      }
     }
 
     return (
@@ -133,7 +151,7 @@ class GForm extends Component {
           </button>
         </form>
 
-        <p className="form-submit-message">{submitMessage}</p>
+        <p className="form-submit-message">{submitStatus}</p>
       </div>
     );
   }
