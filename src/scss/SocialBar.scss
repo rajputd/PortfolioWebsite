@@ -7,10 +7,9 @@
     text-decoration: none;
     font-size: 2em;
     margin: .25em;
-  }
 
-  a:hover {
-    color: darken($secondary-color, 20%);
-    text-decoration: none;
+    &:hover {
+      color: darken($secondary-color, 20%);
+    }
   }
 }

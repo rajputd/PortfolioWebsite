@@ -22,6 +22,15 @@ section {
   }
 }
 
+a {
+  color: $secondary-color;
+
+  &:hover {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}
+
 #home {
   //override height to adjust for navbar
   height: 90vh;
