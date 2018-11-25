@@ -3,6 +3,8 @@
 #NavMenu {
   background-color: transparent;
   border-color: transparent;
+  position: fixed;
+  width: 100%;
 
   * {
     color: $secondary-color;
