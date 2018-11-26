@@ -1,6 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Portfolio Website
+
+## Description
+
+A website to show my webdevelopment skills to prospective employers.
+
+## Tech Used
+
+1. React
+2. Sass
+3. Google Sheets (as an email service)
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
