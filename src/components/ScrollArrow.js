@@ -6,9 +6,12 @@ import '../scss/ScrollArrow.scss';
 const ScrollArrow = ({ destination, up = false }) => {
 
   return (
-    <a href={destination} className="scrollArrow">
-      <FontAwesomeIcon icon={ up ? faAngleDoubleUp: faAngleDoubleDown } size="lg"/>
-    </a>
+    <div className="scrollArrow">
+      <a href={destination}>
+        <FontAwesomeIcon icon={ up ? faAngleDoubleUp: faAngleDoubleDown } size="lg"/>
+      </a>
+    </div>
+
 
   )
 }
