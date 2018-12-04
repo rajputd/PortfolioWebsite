@@ -1,7 +1,7 @@
 {
-  "main.css": "/static/css/main.c5439487.chunk.css",
-  "main.js": "/static/js/main.247197c9.chunk.js",
-  "main.js.map": "/static/js/main.247197c9.chunk.js.map",
+  "main.css": "/static/css/main.8dc681a4.chunk.css",
+  "main.js": "/static/js/main.6086e5c2.chunk.js",
+  "main.js.map": "/static/js/main.6086e5c2.chunk.js.map",
   "static/js/1.fa5765d8.chunk.js": "/static/js/1.fa5765d8.chunk.js",
   "static/js/1.fa5765d8.chunk.js.map": "/static/js/1.fa5765d8.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -11,8 +11,8 @@
   "static/media/pomodoro_timer.png": "/static/media/pomodoro_timer.bd95b7c2.png",
   "static/media/random_quote.png": "/static/media/random_quote.9cb90476.png",
   "static/media/react_calc.png": "/static/media/react_calc.f9bdfab5.png",
-  "static/css/main.c5439487.chunk.css.map": "/static/css/main.c5439487.chunk.css.map",
+  "static/css/main.8dc681a4.chunk.css.map": "/static/css/main.8dc681a4.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.af8828b7bad4671eb2c76c237fd84672.js": "/precache-manifest.af8828b7bad4671eb2c76c237fd84672.js",
+  "precache-manifest.aa5a406670d262bd8462bea2bcaee504.js": "/precache-manifest.aa5a406670d262bd8462bea2bcaee504.js",
   "service-worker.js": "/service-worker.js"
 }
