@@ -6,8 +6,13 @@ import Card from './components/Card';
 import GForm from './components/GForm';
 import ScrollArrow from './components/ScrollArrow';
 import Content from './Content';
+import ReactGA from 'react-ga';
 
 import './scss/App.scss';
+
+//initialize google analytics and track page views
+ReactGA.initialize('UA-130405273-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   render() {
